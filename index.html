@@ -106,7 +106,7 @@ input, select {
 .hidden {
   display: none;
 }
-</style>
+</style><script src="https://js.paystack.co/v2/inline.js"></script>p
 </head>
 
 <body>
@@ -157,6 +157,11 @@ input, select {
     </div>
 
     <div class="card">
+    <h2>Premium Subscription</h2>
+    <p>Subscribe for ₦10,000 to unlock code generation.</p>
+    <button onclick="payWithPaystack()">Subscribe — ₦10,000</button>
+    <p id="paymentStatus"></p>
+    </div><div class="card">
       <h2>Transactions</h2>
       <div id="transactions">
         <p>No transactions yet.</p>
