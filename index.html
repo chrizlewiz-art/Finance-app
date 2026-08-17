@@ -208,7 +208,34 @@ function addTransaction() {
 
   updateApp();
 }
+function payWithPaystack() {
+  const email = prompt("Enter your email for payment:");
 
+  if (!email) {
+    return;
+  }
+
+  const popup = new PaystackPop();
+
+  popup.newTransaction({
+    key: "pk_test_fc47527b55348e87f9bfbbe73ada1fe1a240f546",
+    email: email,
+    amount: 1000000,
+    currency: "NGN",
+
+    onSuccess: (transaction) => {
+      document.getElementById("paymentStatus").innerText =
+        "Payment successful! Premium unlocked.";
+
+      alert("Payment successful! Your premium access is now unlocked.");
+    },
+
+    onCancel: () => {
+      document.getElementById("paymentStatus").innerText =
+        "Payment cancelled.";
+    }
+  });
+}
 function updateApp() {
 
   let income = 0;
