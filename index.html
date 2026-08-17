@@ -99,7 +99,7 @@ button:active { transform: scale(0.99); }
 ========================= */
 const PAYSTACK_PUBLIC_KEY = "pk_test_fc47527b55348e87f9bfbbe73ada1fe1a240f546";
 const SUBSCRIPTION_AMOUNT = 10000;
-
+const PAYSTACK_AMOUNT = 1000000;
 /* =========================
    APP DATA
 ========================= */
@@ -188,7 +188,7 @@ if (currentBalance < 10000) {
   popup.newTransaction({
     key: PAYSTACK_PUBLIC_KEY,
     email: email,
-    amount: SUBSCRIPTION_AMOUNT,
+    amount: PAYSTACK_AMOUNT,
     currency: "NGN",
 
     onLoad: function(response) {
