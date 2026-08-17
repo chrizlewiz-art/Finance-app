@@ -183,6 +183,20 @@ input, select {
 
 let transactions = [];
 
+let premiumUnlocked = false;
+
+function generateCode() {
+    if (!premiumUnlocked) {
+        alert("🔒 Please subscribe for ₦10,000 to unlock the code generator.");
+        return;
+    }
+
+    const code = "FIN-" + Math.random().toString(36).substring(2, 8).toUpperCase();
+
+    document.getElementById("generatedCode").innerHTML =
+        "<strong>Your Code:</strong> " + code;
+}
+
 function openDashboard() {
   document.getElementById("welcome").classList.add("hidden");
   document.getElementById("dashboard").classList.remove("hidden");
@@ -231,6 +245,8 @@ function payWithPaystack() {
     currency: "NGN",
 
     onSuccess: (transaction) => {
+    premiumUnlocked = true;
+    document.getElementById("paymentStatus")...
       document.getElementById("paymentStatus").innerText =
         "Payment successful! Premium unlocked.";
 
