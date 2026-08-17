@@ -160,7 +160,14 @@ input, select {
     <h2>Premium Subscription</h2>
     <p>Subscribe for ₦10,000 to unlock code generation.</p>
     <button onclick="payWithPaystack()">Subscribe — ₦10,000</button>
-    <p id="paymentStatus"></p>
+    <p id="paymentStatus"></p><div id="codeGenerator" style="display:none; margin-top:20px;">
+  <h3>🔐 Code Generator</h3>
+  <p>Premium unlocked. You can now generate your code.</p>
+
+  <button onclick="generateCode()">Generate Code</button>
+
+  <div id="generatedCode" style="margin-top:15px; padding:15px; background:#f3f6fb; border-radius:10px; text-align:center; font-size:24px; font-weight:bold;"></div>
+    </div>
     </div><div class="card">
       <h2>Transactions</h2>
       <div id="transactions">
